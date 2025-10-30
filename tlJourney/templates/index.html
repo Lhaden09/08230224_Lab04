@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Learning Journey</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #f8e9f4, #e0f7fa);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            color: #333;
+            background: linear-gradient(90deg, #ffb6b9, #fae3d9);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: #2b2b2b;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 3rem;
+        }
+
+        .card {
+            width: 280px;
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .inner-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .card:hover .inner-card {
+            transform: rotateY(180deg);
+        }
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .front {
+            background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+            color: #333;
+        }
+
+        .back {
+            background: white;
+            color: #555;
+            transform: rotateY(180deg);
+            font-size: 1rem;
+        }
+
+
+        .footer {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .footer a {
+            text-decoration: none;
+            font-weight: bold;
+            background: linear-gradient(90deg, #84fab0, #8fd3f4);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .footer a:hover {
+            background: linear-gradient(90deg, #43e97b, #38f9d7);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌸 My Learning Journey 🌸</h1>
+        <p>Each chapter of life adds color to who I am becoming.</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="inner-card">
+                <div class="front">🎒 School Days</div>
+                <div class="back">Where curiosity first bloomed learning, laughing, and discovering my path.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="inner-card">
+                <div class="front">🎓 College Life</div>
+                <div class="back">Exploring independence, friendships, and the real meaning of growth and purpose.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="inner-card">
+                <div class="front">🏞️ Hobbies</div>
+                <div class="back">Traveling, hiking, capturing stories through pictures, and finding calm in sports.</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="inner-card">
+                <div class="front">💭 Personal Growth</div>
+                <div class="back">
+                    Learning to balance courage with fear, and love with self-care a journey still unfolding.
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" style="width:600px; height:250px;">
+            <div class="inner-card">
+                
+                <!-- Front side -->
+                <div class="front" style="display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+                    Admin Interface
+                </div>
+        
+                <!-- Back side -->
+                <div class="back" style="padding:0;">
+                    <img src="{% static 'tlJourney/admin.png' %}" 
+                         alt="Admin"
+                         style="width:150%; height:150%; object-fit:cover; border-radius:15px;">
+                </div>
+        
+            </div>
+        </div>
+        
+        
+        
+        </div>
+        
+
+    <div class="footer">
+        <a href="{% url 'about_me' %}">✨ Know Me Better</a>
+    </div>
+</body>
+</html>
